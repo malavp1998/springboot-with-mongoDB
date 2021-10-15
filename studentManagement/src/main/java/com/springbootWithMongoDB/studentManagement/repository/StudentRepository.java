@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigInteger;
 
 @Repository
-public interface StudentRepository extends MongoRepository<Student, BigInteger> {
+public interface StudentRepository extends MongoRepository<Student, String> {
 
     @Query("{name:'?0'}")
     Student findItemByName(String name);

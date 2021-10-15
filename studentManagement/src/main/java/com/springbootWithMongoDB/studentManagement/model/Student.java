@@ -16,7 +16,7 @@ import java.math.BigInteger;
 public class Student {
 
     @Id
-    private BigInteger id;
+    private String id;
     private int rollNum;
     private String name;
 

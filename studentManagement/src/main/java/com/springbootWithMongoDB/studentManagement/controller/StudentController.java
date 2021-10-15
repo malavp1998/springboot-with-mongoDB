@@ -39,7 +39,7 @@ public class StudentController {
     }
 
     @GetMapping("/student/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable BigInteger id)
+    public ResponseEntity<Student> getStudentById(@PathVariable String id)
     {
         try{
                 Optional<Student> byId = studentRepository.findById(id);
@@ -93,7 +93,7 @@ public class StudentController {
 
 
     @DeleteMapping("/student/{id}")
-    public ResponseEntity<Student> deleteStudentById(@PathVariable BigInteger id)
+    public ResponseEntity<Student> deleteStudentById(@PathVariable String id)
     {
 
         System.out.println(id);
@@ -118,7 +118,7 @@ public class StudentController {
     }
 
     @PutMapping("/student/{id}")
-    public ResponseEntity<Student> updateStudentById(@PathVariable BigInteger id, @RequestParam int rollNum, @RequestParam String name )
+    public ResponseEntity<Student> updateStudentById(@PathVariable String id, @RequestParam int rollNum, @RequestParam String name )
     {
         try {
             if(studentRepository.existsById(id))
